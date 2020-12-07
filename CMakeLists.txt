@@ -1,0 +1,24 @@
+cmake_minimum_required (VERSION 3.0)
+
+project(ExpertSystem)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+
+include(CMakeConfig)
+
+set(EXTERNALS_INSTALL_DIR ${CMAKE_SOURCE_DIR}/lib)
+
+set(EXTERNALS_BUILD_DIR ${CMAKE_BINARY_DIR})
+
+if(MSVC AND NOT (${CMAKE_GENERATOR} MATCHES "Win64"))
+    set(CMAKE_GENERATOR_PLATFORM_PARAM -A ${CMAKE_GENERATOR_PLATFORM})
+else()
+    set(CMAKE_GENERATOR_PLATFORM_PARAM)
+endif()
+
+include(BuildExternals)
+
+add_subdirectory(src)

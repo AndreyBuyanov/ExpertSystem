@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<es>
+    <name>Диагностика компьютера</name>
+    <tree>
+        <nodes>
+            <node type="question" id="1">Есть питание?</node>
+            <node type="question" id="2">Монитор работает?</node>
+            <node type="question" id="3">Блок питания исправен?</node>
+            <node type="question" id="4">Есть звуковые сигналы?</node>
+            <node type="question" id="5">Материнская плата исправна?</node>
+            <node type="question" id="6">Новое оборудование установлено?</node>
+            <node type="question" id="7">HDD исправен?</node>
+            <node type="question" id="8">Материнская плата получает питание?</node>
+            <node type="answer" id="9">Проверьте исправность видеокарты</node>
+            <node type="answer" id="10">Замение блок питания</node>
+            <node type="answer" id="11">Проверьте исправность материнской платы</node>
+            <node type="answer" id="12">Проверьте подключение питания к материнской плате</node>
+            <node type="answer" id="13">Удалите последнее установленное оборудование</node>
+            <node type="answer" id="14">Проверьте HDD</node>
+            <node type="answer" id="15">Проверьте материнскую плату и правильность установки компонентов</node>
+        </nodes>
+        <connections>
+            <connection src="1" dst="2" predicat="1" />
+            <connection src="1" dst="3" predicat="0" />
+            <connection src="2" dst="4" predicat="1" />
+            <connection src="2" dst="9" predicat="0" />
+            <connection src="4" dst="11" predicat="1" />
+            <connection src="4" dst="6" predicat="0" />
+            <connection src="6" dst="13" predicat="1" />
+            <connection src="6" dst="7" predicat="0" />
+            <connection src="3" dst="5" predicat="1" />
+            <connection src="3" dst="10" predicat="0" />
+            <connection src="5" dst="7" predicat="1" />
+            <connection src="5" dst="12" predicat="0" />
+            <connection src="7" dst="8" predicat="1" />
+            <connection src="7" dst="14" predicat="0" />
+            <connection src="8" dst="15" predicat="1" />
+            <connection src="8" dst="10" predicat="0" />
+        </connections>
+    </tree>
+</es>
