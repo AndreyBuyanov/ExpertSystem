@@ -1,3 +1,6 @@
 .git
+.idea
+cmake-build-debug
+cmake-build-relwithdebinfo
 build
 lib
